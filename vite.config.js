@@ -21,6 +21,9 @@ export default defineConfig({
   server: {
     port: 7777,
   },
+  optimizeDeps: {
+    exclude: ['@remix-run/cloudflare-pages']
+  },
   plugins: [
     mdx({
       rehypePlugins: [[rehypeImgSize, { dir: 'public' }], rehypeSlug, rehypePrism],

@@ -44,13 +44,6 @@ export const Uses = () => {
               <ProjectSectionText as="div">
                 <List>
                   <ListItem>
-                    <Link href="https://www.figma.com">Figma</Link> is my primary tool for
-                    UI design these days. Made the switch from Sketch in 2020 and haven’t
-                    looked back. I’ve also created{' '}
-                    <Link href="https://www.figma.com/@hamish">a few plugins</Link> that
-                    you can install.
-                  </ListItem>
-                  <ListItem>
                     Any motion graphics I create are created in Adobe After Effects. So
                     far I haven’t found a non-Adobe product that’s as good. If anyone has
                     suggestions please <Link href="/contact">message me</Link>.
@@ -101,12 +94,21 @@ export const Uses = () => {
                     <Link href="https://www.framer.com/motion/">Framer Motion</Link>, it’s
                     a great way to add spring animations to React and three.js.
                   </ListItem>
-                  <ListItem>
+                  {/* <ListItem>
                     For building and testing UI components in isolation I use{' '}
                     <Link href="https://storybook.js.org/">Storybook</Link>. Check out the{' '}
                     <Link href="https://storybook.hamishw.com">
                       storybook for this website
                     </Link>
+                    .
+                  </ListItem> */}
+                  <ListItem>
+                    More stuff coming soon
+                    {/* For building and testing UI components in isolation I use{' '}
+                    <Link href="https://storybook.js.org/">Storybook</Link>. Check out the{' '}
+                    <Link href="https://storybook.hamishw.com">
+                      storybook for this website
+                    </Link> */}
                     .
                   </ListItem>
                 </List>
@@ -121,36 +123,8 @@ export const Uses = () => {
               <Table>
                 <TableBody>
                   <TableRow>
-                    <TableHeadCell>Desktop</TableHeadCell>
-                    <TableCell>Custom built</TableCell>
-                  </TableRow>
-                  <TableRow>
                     <TableHeadCell>Operating system</TableHeadCell>
                     <TableCell>Arch Linux (by the way)</TableCell>
-                  </TableRow>
-                  <TableRow>
-                    <TableHeadCell>Monitor</TableHeadCell>
-                    <TableCell>1440p IPS 144hz LG 27GL850</TableCell>
-                  </TableRow>
-                  <TableRow>
-                    <TableHeadCell>Keyboard</TableHeadCell>
-                    <TableCell>Tofu65</TableCell>
-                  </TableRow>
-                  <TableRow>
-                    <TableHeadCell>Mouse</TableHeadCell>
-                    <TableCell>Logitech G403</TableCell>
-                  </TableRow>
-                  <TableRow>
-                    <TableHeadCell>Laptop</TableHeadCell>
-                    <TableCell>Macbook Pro 14″</TableCell>
-                  </TableRow>
-                  <TableRow>
-                    <TableHeadCell>Headphones</TableHeadCell>
-                    <TableCell>Audio Technica ATH-M50x/Apple Airpods</TableCell>
-                  </TableRow>
-                  <TableRow>
-                    <TableHeadCell>Microphone</TableHeadCell>
-                    <TableCell>Blue Yeti</TableCell>
                   </TableRow>
                 </TableBody>
               </Table>
