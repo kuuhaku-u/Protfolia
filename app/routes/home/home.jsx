@@ -7,7 +7,6 @@ import { useEffect, useRef, useState } from 'react';
 import config from '~/config.json';
 import styles from './home.module.css';
 
-// Prefetch draco decoader wasm
 export const links = () => {
   return [
     {
