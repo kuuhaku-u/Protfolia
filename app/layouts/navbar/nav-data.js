@@ -26,7 +26,7 @@ export const socialLinks = [
     icon: 'twitter',
   },
   {
-    label: 'Figma',
+    label: 'LinkedIn',
     url: `https://linkedin.com/in/${config.linkedIn}`,
     icon: 'linkedin',
   },
