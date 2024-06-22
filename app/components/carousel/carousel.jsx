@@ -111,7 +111,6 @@ export const Carousel = ({ width, height, images, placeholder, ...rest }) => {
 
       const textures = await Promise.all(texturePromises);
 
-      // Cancel if the component has unmounted during async code
       if (!mounted) return;
 
       material.current = new ShaderMaterial({
