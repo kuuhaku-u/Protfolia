@@ -125,7 +125,7 @@ export const Navbar = () => {
   };
 
   const handleResumeDownload = () => {
-    window.open(`${BASE_URL}/resume/AnkitBansalResume.pdf`, '_blank');
+    window.open(`${BASE_URL}resume/AnkitBansalResume.pdf`, '_blank');
   };
 
   const handleNavItemClick = event => {
