@@ -7,31 +7,28 @@ import { useEffect, useRef, useState } from 'react';
 import config from '~/config.json';
 import styles from './home.module.css';
 
-export const links = () => {
-  return [
-    {
-      rel: 'prefetch',
-      href: '/draco/draco_wasm_wrapper.js',
-      as: 'script',
-      type: 'text/javascript',
-      importance: 'low',
-    },
-    {
-      rel: 'prefetch',
-      href: '/draco/draco_decoder.wasm',
-      as: 'fetch',
-      type: 'application/wasm',
-      importance: 'low',
-    },
-  ];
-};
+export const links = () => [
+  {
+    rel: 'prefetch',
+    href: '/draco/draco_wasm_wrapper.js',
+    as: 'script',
+    type: 'text/javascript',
+    importance: 'low',
+  },
+  {
+    rel: 'prefetch',
+    href: '/draco/draco_decoder.wasm',
+    as: 'fetch',
+    type: 'application/wasm',
+    importance: 'low',
+  },
+];
 
-export const meta = () => {
-  return baseMeta({
-    title: 'Designer + Developer',
-    description: `Design portfolio of ${config.name} — a product designer working on web & mobile apps with a focus on motion, experience design, and accessibility.`,
+export const meta = () =>
+  baseMeta({
+    title: 'Developer Portfolio',
+    description: `Portfolio of ${config.name} — Developer focused on scalable software solutions and user experiences.`,
   });
-};
 
 export const Home = () => {
   const [visibleSections, setVisibleSections] = useState([]);
@@ -40,10 +37,11 @@ export const Home = () => {
   const projectOne = useRef();
   const projectTwo = useRef();
   const projectThree = useRef();
+  const projectFour = useRef();
   const details = useRef();
 
   useEffect(() => {
-    const sections = [intro, projectOne, projectTwo, projectThree, details];
+    const sections = [intro, projectOne, projectTwo, projectThree, projectFour, details];
 
     const sectionObserver = new IntersectionObserver(
       (entries, observer) => {
@@ -52,7 +50,7 @@ export const Home = () => {
             const section = entry.target;
             observer.unobserve(section);
             if (visibleSections.includes(section)) return;
-            setVisibleSections(prevSections => [...prevSections, section]);
+            setVisibleSections(prev => [...prev, section]);
           }
         });
       },
@@ -67,10 +65,10 @@ export const Home = () => {
     );
 
     sections.forEach(section => {
-      sectionObserver.observe(section.current);
+      section.current && sectionObserver.observe(section.current);
     });
 
-    indicatorObserver.observe(intro.current);
+    intro.current && indicatorObserver.observe(intro.current);
 
     return () => {
       sectionObserver.disconnect();
@@ -85,54 +83,136 @@ export const Home = () => {
         sectionRef={intro}
         scrollIndicatorHidden={scrollIndicatorHidden}
       />
+
       <ProjectSummary
         id="project-1"
+        alternate
         sectionRef={projectOne}
         visible={visibleSections.includes(projectOne.current)}
         index={1}
-        title="Designing the future of Electricity Usage Monitoring"
-        description="Designing a platform to help user to monitor and choose the Electricty usage , allowing them to chnage peak and off -peak usage "
+        title="Extramarks"
+        description={
+          <>
+            <ul>
+              <li>
+                Worked extensively on document manipulation tools including PDF and PPTX
+                parsing.
+              </li>
+              <li>
+                Developed robust backend services in Node.js to support these features.
+              </li>
+              <li>
+                Managed and enhanced React frontend for seamless user interaction and data
+                visualization.
+              </li>
+            </ul>
+          </>
+        }
         buttonText="View project"
-        buttonLink="https://www.electrickiwi.co.nz/"
+        buttonLink="https://www.extramarks.com/"
         model={{
           type: 'laptop',
-          alt: 'Electric kiwi',
+          alt: 'Extramarks',
         }}
       />
+
       <ProjectSummary
         id="project-2"
-        alternate
         sectionRef={projectTwo}
         visible={visibleSections.includes(projectTwo.current)}
         index={2}
-        title="Designing the future of Electricity Usage Monitoring"
-        description="Designing a platform to help user to monitor and choose the Electricty usage , allowing them to chnage peak and off -peak usage "
+        title="ElectricKiwi"
+        description={
+          <>
+            <ul>
+              <li>Full stack project focused on energy solutions.</li>
+              <li>
+                Contributed to frontend development for an energy-based platform focusing
+                on custom components and integrating JavaScript libraries and frameworks.
+              </li>
+              <li>
+                Created backend API to serve data and integrated AWS Lambda and Cognito
+                for Authorization/Authentication.
+              </li>
+            </ul>
+          </>
+        }
         buttonText="View project"
         buttonLink="https://www.electrickiwi.co.nz/"
         model={{
           type: 'laptop',
-          alt: 'Electric kiwi',
+          alt: 'ElectricKiwi',
         }}
       />
+
       <ProjectSummary
         id="project-3"
+        alternate
         sectionRef={projectThree}
         visible={visibleSections.includes(projectThree.current)}
         index={3}
-        title="Designing the future of Electricity Usage Monitoring"
-        description="Designing a platform to help user to monitor and choose the Electricty usage , allowing them to chnage peak and off -peak usage "
+        title="T-Mobile (Adobe)"
+        description={
+          <>
+            <ul>
+              <li>Frontend project associated with Adobe AEM.</li>
+              <li>
+                Developed modular and responsive Alpine.js components optimized for
+                performance and compatibility with AEM.
+              </li>
+              <li>
+                Collaborated with AEM developers to seamlessly integrate frontend
+                components adhering to best practices and client specifications.
+              </li>
+            </ul>
+          </>
+        }
         buttonText="View project"
-        buttonLink="https://www.electrickiwi.co.nz/"
+        buttonLink=""
         model={{
           type: 'laptop',
-          alt: 'Electric kiwi',
+          alt: 'T-Mobile Adobe Project',
         }}
       />
+
+      <ProjectSummary
+        id="project-4"
+        sectionRef={projectFour}
+        visible={visibleSections.includes(projectFour.current)}
+        index={4}
+        title="Crypto Website"
+        description={
+          <>
+            <ul>
+              <li>
+                Full stack cryptocurrency website project overseeing both frontend and
+                backend.
+              </li>
+              <li>
+                Utilized Next.js and React.js to create responsive templates and custom
+                forms.
+              </li>
+              <li>
+                Implemented backend services using Rust Tokio runtime with unit testing to
+                ensure secure transactions and efficient data management.
+              </li>
+            </ul>
+          </>
+        }
+        buttonText="View project"
+        buttonLink=""
+        model={{
+          type: 'laptop',
+          alt: 'Crypto Website',
+        }}
+      />
+
       <Profile
         sectionRef={details}
         visible={visibleSections.includes(details.current)}
         id="details"
       />
+
       <Footer />
     </div>
   );

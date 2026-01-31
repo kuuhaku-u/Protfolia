@@ -1,36 +1,51 @@
-import { json } from '@remix-run/cloudflare';
-import { Outlet, useLoaderData } from '@remix-run/react';
+import { Outlet, useLocation } from '@remix-run/react';
 import { MDXProvider } from '@mdx-js/react';
 import { Post, postMarkdown } from '~/layouts/post';
 import { baseMeta } from '~/utils/meta';
-import config from '~/config.json';
-import { formatTimecode, readingTime } from '~/utils/timecode';
+import { useState, useEffect } from 'react';
 
-export async function loader({ request }) {
-  const slug = request.url.split('/').at(-1);
-  const module = await import(`../articles.${slug}.mdx`);
-  const text = await import(`../articles.${slug}.mdx?raw`);
-  const readTime = readingTime(text.default);
-  const ogImage = `${config.url}/static/${slug}-og.jpg`;
-
-  return json({
-    ogImage,
-    frontmatter: module.frontmatter,
-    timecode: formatTimecode(readTime),
+export function meta() {
+  return baseMeta({ 
+    title: 'Article', 
+    description: 'Article content',
+    prefix: ''
   });
 }
 
-export function meta({ data }) {
-  const { title, abstract } = data.frontmatter;
-  return baseMeta({ title, description: abstract, prefix: '', ogImage: data.ogImage });
-}
-
 export default function Articles() {
-  const { frontmatter, timecode } = useLoaderData();
+  const location = useLocation();
+  const [articleData, setArticleData] = useState(null);
+  
+  useEffect(() => {
+    const slug = location.pathname.split('/').at(-1);
+    if (!slug) return;
+    
+    Promise.all([
+      import(`../articles.${slug}.mdx`),
+      import(`../articles.${slug}.mdx?raw`)
+    ]).then(([module, text]) => {
+      const words = text.default.trim().split(/\s+/).length;
+      const time = Math.round(words / 200);
+      const hours = Math.floor(time / 60);
+      const minutes = time % 60;
+      const timecode = `${String(hours).padStart(2, '0')}:${String(minutes).padStart(2, '0')}:00:00`;
+      
+      setArticleData({
+        frontmatter: module.frontmatter,
+        timecode
+      });
+    }).catch(() => {
+      setArticleData(null);
+    });
+  }, [location.pathname]);
+
+  if (!articleData) {
+    return null;
+  }
 
   return (
     <MDXProvider components={postMarkdown}>
-      <Post {...frontmatter} timecode={timecode}>
+      <Post {...articleData.frontmatter} timecode={articleData.timecode}>
         <Outlet />
       </Post>
     </MDXProvider>

@@ -20,7 +20,7 @@ const baseTokens = {
   fontWeightRegular: 400,
   fontWeightMedium: 500,
   fontWeightBold: 700,
-  fontSizeH0: pxToRem(140),
+  fontSizeH0: pxToRem(120),
   fontSizeH1: pxToRem(100),
   fontSizeH2: pxToRem(58),
   fontSizeH3: pxToRem(38),

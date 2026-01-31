@@ -7,25 +7,16 @@
   .highlight {
     fill: var(--accent);
     opacity: 0;
-    transform: scale3d(1, 0, 1);
+    transform: scaleY(0);
     transform-origin: top;
-    transition: opacity 0.1s ease var(--durationM);
+    transition: opacity 0.1s ease, transform var(--durationM) var(--bezierFastoutSlowin);
 
-    @media (--mediaUseMotion) {
-      transition: transform var(--durationM) var(--bezierFastoutSlowin),
-        opacity 0.1s ease var(--durationM);
-    }
-
-    :is(a:hover, .monogram:hover) & {
+    /* Hover animation */
+    .monogram:hover &,
+    a:hover & {
       opacity: 1;
-      transform: scale3d(1, 1, 1);
+      transform: scaleY(1);
       transform-origin: bottom;
-      transition: opacity 0.1s ease;
-
-      @media (--mediaUseMotion) {
-        transition: transform var(--durationM) var(--bezierFastoutSlowin),
-          opacity 0.1s ease;
-      }
     }
   }
 }

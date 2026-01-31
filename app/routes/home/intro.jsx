@@ -68,7 +68,7 @@ export function Intro({ id, sectionRef, scrollIndicatorHidden, ...rest }) {
                 <DisplacementSphere />
               </Suspense>
             )}
-            <header className={styles.text}>
+            <header className={styles.text} style={{top:"10%"}}>
               <h1 className={styles.name} data-visible={visible} id={titleId}>
                 <DecoderText text={config.name} delay={500} />
               </h1>

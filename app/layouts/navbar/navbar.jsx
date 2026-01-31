@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import { Icon } from '~/components/icon';
 import { Monogram } from '~/components/monogram';
 import { useTheme } from '~/components/theme-provider';
@@ -122,9 +123,8 @@ export const Navbar = () => {
   };
 
   const handleResumeDownload = () => {
-
-    window.open("/resume/abc.pdf", '_blank');
-  }
+    window.open('/resume/AnkitBansalResume.pdf', '_blank');
+  };
 
   const handleNavItemClick = event => {
     const hash = event.currentTarget.href.split('#')[1];
@@ -157,7 +157,6 @@ export const Navbar = () => {
       <NavToggle onClick={() => setMenuOpen(!menuOpen)} menuOpen={menuOpen} />
       <nav className={styles.nav}>
         <div className={styles.navList}>
-
           {navLinks.map(({ label, pathname }) => (
             <RouterLink
               unstable_viewTransition
@@ -172,8 +171,14 @@ export const Navbar = () => {
               {label}
             </RouterLink>
           ))}
-          <a className={styles.navLink} name="RESUME" onClick={handleResumeDownload} href='#'>Resume</a>
-
+          <a
+            className={styles.navLink}
+            name="RESUME"
+            onClick={handleResumeDownload}
+            href="#"
+          >
+            Resume
+          </a>
         </div>
         <NavbarIcons desktop />
       </nav>
@@ -199,7 +204,14 @@ export const Navbar = () => {
                 {label}
               </RouterLink>
             ))}
-            <a className={styles.navLink} name="RESUME" onClick={handleResumeDownload} href='#'>Resume</a>
+            <a
+              className={styles.navLink}
+              name="RESUME"
+              onClick={handleResumeDownload}
+              href="#"
+            >
+              Resume
+            </a>
 
             <NavbarIcons />
             <ThemeToggle isMobile />

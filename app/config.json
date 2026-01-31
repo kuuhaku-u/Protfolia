@@ -1,8 +1,14 @@
 {
   "name": "Ankit Bansal",
-  "role": "Developer",
-  "disciplines": ["Frontend","Backend", "Prototyper", "Slayer", "Dev-ops"],
-  "url": "",
+  "role": "SWE",
+  "disciplines": [
+    "Frontend",
+    "Backend",
+    "Prototyping",
+    "DevOps",
+    "Full-Stack"
+  ],
+  "url": "https://www.ankitbansal.dev",
   "twitter": "@LucifEr_FeIth",
   "github": "kuuhaku-u",
   "linkedIn":"ankit-b-509148227",

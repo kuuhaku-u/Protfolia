@@ -8,7 +8,7 @@ import { Section } from '~/components/section';
 import { Text } from '~/components/text';
 import { useReducedMotion } from 'framer-motion';
 import { useWindowSize } from '~/hooks';
-import { Link as RouterLink, useLoaderData } from '@remix-run/react';
+import { Link as RouterLink } from '@remix-run/react';
 import { useState, useEffect } from 'react';
 import { formatDate } from '~/utils/date';
 import { classes, cssProps } from '~/utils/style';
@@ -134,7 +134,6 @@ function SkeletonPost({ index }) {
 }
 
 export function Articles() {
-  const { posts, featured } = useLoaderData();
   const { width } = useWindowSize();
   const singleColumnWidth = 1190;
   const isSingleColumn = width <= singleColumnWidth;

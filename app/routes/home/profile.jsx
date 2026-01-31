@@ -11,18 +11,34 @@ import styles from './profile.module.css';
 
 const ProfileText = ({ visible, titleId }) => (
   <Fragment>
-    <Heading className={styles.title} data-visible={visible} level={3} id={titleId}>
-      <DecoderText text="Hi there" start={visible} delay={500} />
+    <Heading
+      className={styles.title}
+      data-visible={visible}
+      level={3}
+      id={titleId}
+    >
+      <DecoderText text="Hello, I’m Ankit" start={visible} delay={500} />
     </Heading>
-    <Text className={styles.description} data-visible={visible} size="l" as="p">
-      I’m Ankit, currently I live in Delhi , India working as a Full Stack Developer at{' '}
-      <Link href="https://www.qwilr.com">Bonami Software PVT. LTD.</Link>. Being
-      comfortable with code allows me to rapidly prototype and validate experiences. If
-      you’re interested in the tools and software I use check out my{' '}
-      <Link href="/uses">uses page</Link>.
+    <Text
+      className={styles.description}
+      data-visible={visible}
+      size="l"
+      as="p"
+    >
+      I am a Software Engineer based in Delhi, India, currently working at{' '}
+      <Link href="https://www.extramarks.com/">Extramarks</Link>. I enjoy crafting
+      scalable and maintainable solutions while rapidly prototyping ideas. You can
+      explore the tools and technologies I use on my{' '}
+      <Link href="/uses">Uses page</Link>.
     </Text>
-    <Text className={styles.description} data-visible={visible} size="l" as="p">
-      In my spare time I like to  play video games, and{' '}
+    <Text
+      className={styles.description}
+      data-visible={visible}
+      size="l"
+      as="p"
+    >
+      Outside of work, I enjoy playing video games, exploring new technologies, and
+      working on personal projects that challenge and expand my skills.
     </Text>
   </Fragment>
 );
@@ -54,7 +70,7 @@ export const Profile = ({ id, visible, sectionRef }) => {
                 href="/contact"
                 icon="send"
               >
-                Send me a message
+                Contact Me
               </Button>
             </div>
             <div className={styles.column}>
@@ -66,7 +82,7 @@ export const Profile = ({ id, visible, sectionRef }) => {
                   collapseDelay={1000}
                 />
                 <div className={styles.tagText} data-visible={visible}>
-                  About me
+                  About Me
                 </div>
               </div>
             </div>

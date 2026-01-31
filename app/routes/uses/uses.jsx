@@ -20,7 +20,8 @@ import styles from './uses.module.css';
 export const meta = () => {
   return baseMeta({
     title: 'Uses',
-    description: 'A list of hardware and software I use to do my thing',
+    description:
+      'A list of software, tools, and hardware I use for development and learning',
   });
 };
 
@@ -35,30 +36,10 @@ export const Uses = () => {
         />
         <ProjectHeader
           title="Uses"
-          description="A somewhat comprehensive list of tools, apps, hardware, and more that I use on a daily basis to design and code things. And yeah, that is a Johnny Mnemonic GIF in the background."
+          description="A concise overview of the development tools, programming languages, and hardware I use daily for coding, data processing, and learning new technologies."
         />
-        <ProjectSection padding="none" className={styles.section}>
-          <ProjectSectionContent>
-            <ProjectTextRow width="m">
-              <ProjectSectionHeading>Design</ProjectSectionHeading>
-              <ProjectSectionText as="div">
-                <List>
-                  <ListItem>
-                    Any motion graphics I create are created in Adobe After Effects. So
-                    far I haven’t found a non-Adobe product that’s as good. If anyone has
-                    suggestions please <Link href="/contact">message me</Link>.
-                  </ListItem>
-                  <ListItem>
-                    For any 3D models and video editing I use{' '}
-                    <Link href="https://www.blender.org/">Blender</Link>. Since 2.8 it’s
-                    become way simpler to use and in a lot of ways better than expensive
-                    paid tools like 3DS Max or Maya.
-                  </ListItem>
-                </List>
-              </ProjectSectionText>
-            </ProjectTextRow>
-          </ProjectSectionContent>
-        </ProjectSection>
+
+        {/* Development Tools Section */}
         <ProjectSection padding="none" className={styles.section}>
           <ProjectSectionContent>
             <ProjectTextRow width="m">
@@ -66,44 +47,45 @@ export const Uses = () => {
               <ProjectSectionText as="div">
                 <List>
                   <ListItem>
-                    I use <Link href="https://vscodium.com/">VSCodium</Link> as my text
-                    editor, with the Tokyo Night theme and Operator Mono as my typeface of
-                    choice.
+                    I use <Link href="https://vscodium.com/">VSCodium</Link> as my main
+                    editor with the Tokyo Night theme and Operator Mono font.
                   </ListItem>
                   <ListItem>
-                    Firefox is my main browser for both development and general use.
+                    <Link href="https://nodejs.org/">Node.js</Link> for backend
+                    development and scripting.
                   </ListItem>
                   <ListItem>
-                    <Link href="https://reactjs.org/">React</Link> is my front end
-                    Javascript library of choice. The component-centric mental model is
-                    the first thing that truly made sense to me as a designer.
+                    <Link href="https://golang.org/">Go</Link> for efficient backend
+                    services and performance-critical applications.
                   </ListItem>
                   <ListItem>
-                    For 3D effects and image shaders I use{' '}
-                    <Link href="https://threejs.org/">three.js</Link>. It has a bit of a
-                    learning curve but you can do some really powerful stuff with it.
+                    <Link href="https://reactjs.org/">React</Link> is my preferred
+                    front-end framework for building interactive UIs.
                   </ListItem>
                   <ListItem>
-                    For CSS I’ve used a myriad pre-processors and css-in-js solutions like
-                    styled-components, but these days I’m using vanilla CSS with{' '}
-                    <Link href="https://postcss.org/">PostCSS</Link> to get upcoming CSS
-                    features today.
+                    <Link href="https://www.python.org/">Python</Link> for data
+                    processing, scripting, and automation tasks.
                   </ListItem>
                   <ListItem>
-                    For Javascript animations I use{' '}
-                    <Link href="https://www.framer.com/motion/">Framer Motion</Link>, it’s
-                    a great way to add spring animations to React and three.js.
+                    I’m currently learning{' '}
+                    <Link href="https://www.rust-lang.org/">Rust</Link> to explore system
+                    programming and high-performance applications.
                   </ListItem>
-                
                   <ListItem>
-                    More stuff coming soon
-                   
+                    Firefox is my primary browser for development and general use.
+                  </ListItem>
+                  <ListItem>
+                    For JavaScript animations, I use{' '}
+                    <Link href="https://www.framer.com/motion/">Framer Motion</Link> with
+                    React.
                   </ListItem>
                 </List>
               </ProjectSectionText>
             </ProjectTextRow>
           </ProjectSectionContent>
         </ProjectSection>
+
+        {/* Hardware Section */}
         <ProjectSection padding="none" className={styles.section}>
           <ProjectSectionContent>
             <ProjectTextRow stretch width="m">
@@ -112,7 +94,7 @@ export const Uses = () => {
                 <TableBody>
                   <TableRow>
                     <TableHeadCell>Operating system</TableHeadCell>
-                    <TableCell>Arch Linux (by the way)</TableCell>
+                    <TableCell>Arch Linux (By the Way)</TableCell>
                   </TableRow>
                 </TableBody>
               </Table>

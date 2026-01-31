@@ -89,21 +89,19 @@ export function ProjectSummary({
         <Text className={styles.description} data-visible={visible} as="p">
           {description}
         </Text>
-        <div className={styles.button} data-visible={visible}>
-          <Button iconHoverShift href={buttonLink} iconEnd="arrow-right">
-            {buttonText}
-          </Button>
-        </div>
+        {buttonLink && (
+          <div className={styles.button} data-visible={visible}>
+            <Button iconHoverShift href={buttonLink} iconEnd="arrow-right">
+              {buttonText}
+            </Button>
+          </div>
+        )}
       </div>
     );
   }
 
   function renderPreview(visible) {
-    return (
-      <div className={styles.preview}>
-            {renderKatakana('laptop', visible)}
-      </div>
-    );
+    return <div className={styles.preview}>{renderKatakana('laptop', visible)}</div>;
   }
 
   return (

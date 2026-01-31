@@ -1,24 +1,24 @@
-__  __  __
-\ \ \ \ \/
- \ \/\ \
-  \/  \/
+==============================
+        Ankit Bansal - Uses
+==============================
 
-The humans.txt file explains the team, technology,
-and graphic assets behind this site humanstxt.org.
+Role: Software Engineer (SWE)
 
-_______________________________________________________________________________
+Development Tools:
+------------------
+- VSCodium (Tokyo Night theme, Operator Mono font)
+- Node.js: Backend development and scripting
+- Go: Efficient backend services and performance-critical applications
+- React: Frontend framework for building interactive UIs
+- Python: Data processing, scripting, and automation
+- Rust (learning): Exploring system programming and high-performance applications
+- Firefox: Primary browser for development and general use
+- Framer Motion: JavaScript animations with React
 
-TECHNOLOGY | テクノロジー
+Hardware:
+---------
+- Operating System: Arch Linux
+- Laptop: Custom-built or high-performance development laptop
+- Peripherals: Mechanical keyboard, high-DPI mouse, dual monitors
 
-React
-Remix
-Three.js
-Framer Motion
-
-_______________________________________________________________________________
-
-FONTS | フォント
-
-Gotham
-IPA Gothic Regular
-Hiragino Kaku Gothic W8
+==============================
