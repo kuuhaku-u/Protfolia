@@ -20,6 +20,8 @@ import styles from './root.module.css';
 import './reset.module.css';
 import './global.module.css';
 
+const BASE_URL = import.meta.env.BASE_URL || '/';
+
 export const links = () => [
   {
     rel: 'preload',
@@ -35,12 +37,12 @@ export const links = () => [
     type: 'font/woff2',
     crossOrigin: '',
   },
-  { rel: 'manifest', href: '/manifest.json' },
-  { rel: 'icon', href: '/favicon.ico' },
-  { rel: 'icon', href: '/favicon.svg', type: 'image/svg+xml' },
-  { rel: 'shortcut_icon', href: '/shortcut.png', type: 'image/png', sizes: '64x64' },
-  { rel: 'apple-touch-icon', href: '/icon-256.png', sizes: '256x256' },
-  { rel: 'author', href: '/humans.txt', type: 'text/plain' },
+  { rel: 'manifest', href: `${BASE_URL}manifest.json` },
+  { rel: 'icon', href: `${BASE_URL}favicon.ico` },
+  { rel: 'icon', href: `${BASE_URL}favicon.svg`, type: 'image/svg+xml' },
+  { rel: 'shortcut_icon', href: `${BASE_URL}shortcut.png`, type: 'image/png', sizes: '64x64' },
+  { rel: 'apple-touch-icon', href: `${BASE_URL}icon-256.png`, sizes: '256x256' },
+  { rel: 'author', href: `${BASE_URL}humans.txt`, type: 'text/plain' },
 ];
 
 function getInitialTheme() {

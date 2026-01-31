@@ -11,6 +11,7 @@ import rehypePrism from '@mapbox/rehype-prism';
 const isStorybook = process.argv[1]?.includes('storybook');
 
 export default defineConfig({
+  base: process.env.BASE_URL || '/Protfolia/',
   assetsInclude: ['**/*.glb', '**/*.hdr', '**/*.glsl'],
   build: {
     assetsInlineLimit: 1024,
@@ -26,6 +27,7 @@ export default defineConfig({
     }),
     remix({
       ssr: false,
+      basename: process.env.BASE_URL || '/Protfolia/',
       routes(defineRoutes) {
         return defineRoutes(route => {
           route('/', 'routes/home/route.js', { index: true });

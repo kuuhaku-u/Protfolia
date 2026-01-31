@@ -7,17 +7,19 @@ import { useEffect, useRef, useState } from 'react';
 import config from '~/config.json';
 import styles from './home.module.css';
 
+const BASE_URL = import.meta.env.BASE_URL || '/';
+
 export const links = () => [
   {
     rel: 'prefetch',
-    href: '/draco/draco_wasm_wrapper.js',
+    href: `${BASE_URL}draco/draco_wasm_wrapper.js`,
     as: 'script',
     type: 'text/javascript',
     importance: 'low',
   },
   {
     rel: 'prefetch',
-    href: '/draco/draco_decoder.wasm',
+    href: `${BASE_URL}draco/draco_decoder.wasm`,
     as: 'fetch',
     type: 'application/wasm',
     importance: 'low',
