@@ -14,6 +14,8 @@ import { navLinks, socialLinks } from './nav-data';
 import config from '~/config.json';
 import styles from './navbar.module.css';
 
+const BASE_URL = import.meta.env.BASE_URL || '/';
+
 export const Navbar = () => {
   const [current, setCurrent] = useState();
   const [menuOpen, setMenuOpen] = useState(false);
@@ -123,7 +125,7 @@ export const Navbar = () => {
   };
 
   const handleResumeDownload = () => {
-    window.open('/resume/AnkitBansalResume.pdf', '_blank');
+    window.open(`${BASE_URL}/resume/AnkitBansalResume.pdf`, '_blank');
   };
 
   const handleNavItemClick = event => {
