@@ -24,10 +24,10 @@
   }
 
   &[data-first='true'] {
-    margin-top: 0;
+    margin-top: 120px;
 
     @media (--mediaTablet) {
-      margin-top: 0;
+      margin-top: var(--space3XL);
     }
   }
 }
